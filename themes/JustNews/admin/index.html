@@ -178,12 +178,14 @@
 				// width  : "90%",
 				 height : 640,
 				path   : "https://cdn.jsdelivr.net/npm/editor.md@1.5.0/lib/",
-				appendMarkdown : "# MarkDown", 
+				placeholder : "开始编辑..."
+                                appendMarkdown : "", 
 				saveHTMLToTextarea : true,
 				mode : "markdown",
 				tex  : true,
 				tocm : true, 
 				codeFold : true
+                                htmlDecode : true
 			});
 		//表单赋值
 		$('#createDate').val(new Date());
