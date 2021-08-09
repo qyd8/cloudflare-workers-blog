@@ -185,24 +185,7 @@
 				tex  : true,
 				tocm : true, 
 				codeFold : true,
-                                htmlDecode : true,
-                                window.mdEditor=mdEditor;    
-    //editormd工具栏上添加html标签解析开关
-    mdEditor.getToolbarHandles().parseHtml=function(){
-      let ele = $(".editormd-menu li a i:last");
-      if(ele.hasClass('fa-toggle-off')){
-        ele.removeClass('fa-toggle-off').addClass('fa-toggle-on');
-        mdEditor.settings.htmlDecode = true;
-      }else if(ele.hasClass('fa-toggle-on')){
-        ele.removeClass('fa-toggle-on').addClass('fa-toggle-off')
-        mdEditor.settings.htmlDecode = false;
-      }
-      mdEditor.setMarkdown(mdEditor.getMarkdown());
-    }
-    setTimeout(function(){
-      $(".editormd-menu").append('<li class="divider" unselectable="on">|</li><li><a href="javascript:;" title="解析HTML标签" unselectable="on"><i class="fa fa-toggle-off" name="parseHtml" unselectable="on"> 解析HTML标签 </i></a></li>')
-      mdEditor.setToolbarHandler(mdEditor.getToolbarHandles())
-    },300)
+                                htmlDecode : true
 			});
 		//表单赋值
 		$('#createDate').val(new Date());
