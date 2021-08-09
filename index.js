@@ -1,30 +1,73 @@
 'use strict';
 const OPT = {
     "user" : "admin", //后台密码
-    "password" : "yourSelfPwd", //后台密码
-    "siteDomain" : "blog.gezhong.vip",// 域名(不带https 也不带/)
-    "siteName" : "CF workers blog",//博客名称
-    "siteDescription":"A Blog Powered By Cloudflare Workers and KV",//博客描述
+    "password" : "675756", //后台密码
+    "siteDomain" : "blog.1919.gq",// 域名(不带https 也不带/)
+    "siteName" : "Dream of New Zealand",//博客名称
+    "siteDescription":"Record every bit of life",//博客描述
     "keyWords":"cloudflare,KV,workers,blog",//关键字
-    "cacheZoneId":"cc868e8edce4027ad4a735741111111",//清理缓存用 cf区域 ID
-    "cacheToken":"LNxRWH-MPMIGnp8qhyT8FUsjDRN6tdOnmaaaaaaa",//清理缓存用 cf API token
+    "cacheZoneId":"b978de136d619268e8424a5ef9883203",//清理缓存用 cf区域 ID
+    "cacheToken":"gA4yVCNNpgDmqDnl5r8leiqpa7klFsfTOnS-ZHGX",//清理缓存用 cf API token
 	
     "pageSize" : 5,//每页文章数
     "recentlySize" : 6,//最近文章数
     "readMoreLength":150,//阅读更多截取长度	
     "cacheTime" : 60*60*24*0.5, //网页缓存时长(秒),建议=文章更新频率
-    "themeURL" : "https://raw.githubusercontent.com/gdtool/cloudflare-workers-blog/master/themes/default2.0/", // 模板地址,以 "/"" 结尾
+    "themeURL" : "https://raw.githubusercontent.com/qyd8/cloudflare-workers-blog/master/themes/JustNews/", // 模板地址,以 "/"" 结尾
     "html404" : `<b>404</b>`,//404页面代码
     "codeBeforHead":``,//其他代码,显示在</head>前
     "codeBeforBody":``,//其他代码,显示在</body>前
     "commentCode":``,//评论区代码
+    "widgetOther":`
+    <div id="linkcat-0" class="widget widget_links">
+        <h3 class="widget-title">
+            <span>最近评论</span></h3>
+        <div id="waline-recent"></div>
+
+    </div>
+        `,
+    "commentCode":`
+        <div id="waline"  name="waline" class="comments-area"></div>
+    `,
+    "codeBeforHead":`
+    <style>
+        #waline-recent img {max-width: 100%;}
+        #waline-recent li {border: thick double #32a1ce;}
+    </style>
+    <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+    `,
+    "codeBeforBody":`
+        <script>
+            //这一段是初始化Waline的,visitor: true记得开启
+            new Waline({
+                el:'#waline',
+                serverURL: 'https://vipzp.vercel.app',
+                appId: 'zl911JB8pgz2d4X44QNybX4r-MdYXbMMI',
+                appKey: '5BxCwIUKHQMitul37m9ABGW4',
+                avatar:'monsterid',
+                recordIP:false,
+                requiredFields:['nick'],
+                visitor: true,
+                //path:"/",
+                placeholder:"整两句..."
+            })
+            //这一段是加载最近评论的
+            window.addEventListener('load', function() {
+              Waline.Widget.RecentComments({
+                el: '#waline-recent',
+                serverURL: 'https://vipzp.vercel.app',
+                count: 10
+              });
+            });
+        </script>
+    `,
     "widgetOther":``,//20201224新增参数,用于右侧 小部件扩展
     "otherCodeA":``,//其他参数A,可设置为 "阅读次数:"四个大字
     "otherCodeB":``,//其他参数A
     "otherCodeC":``,//其他参数A
     "otherCodeD":``,//其他参数A
     "otherCodeE":``,//其他参数A
-    "copyRight" :`Powered by <a href="https://www.cloudflare.com">CF Workers</a> & <a href="https://blog.gezhong.vip">CF-Blog </a>`,//自定义版权信息,建议保留大公无私的 Coudflare 和 作者 的链接
+    "copyRight" :`Powered by <a href="https://www.cloudflare.com">CF Workers</a> & <a href="https://drive.9966.workers.dev">Net-Drive </a>`,//自定义版权信息,建议保留大公无私的 Coudflare 和 作者 的链接
 "robots":`User-agent: *
 Disallow: /admin`//robots.txt设置
 };
