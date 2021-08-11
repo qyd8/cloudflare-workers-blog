@@ -1,8 +1,8 @@
 'use strict';
 const OPT = {
     "user" : "admin", //后台密码
-    "password" : "675756", //后台密码
-    "siteDomain" : "blog.1919.gq",// 域名(不带https 也不带/)
+    "password" : "", //后台密码
+    "siteDomain" : "",// 域名(不带https 也不带/)
     "siteName" : "Dream of New Zealand",//博客名称
     "siteDescription":"Record every bit of life",//博客描述
     "keyWords":"cloudflare,KV,workers,blog",//关键字
