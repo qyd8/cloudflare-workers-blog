@@ -15,6 +15,10 @@ const OPT = {
     "cacheTime" : 60*60*24*0.5, //网页缓存时长(秒),建议=文章更新频率
     "themeURL" : "https://raw.githubusercontent.com/qyd8/cloudflare-workers-blog/master/themes/JustNews/", // 模板地址,以 "/"" 结尾
     "html404" : `<b>404</b>`,//404页面代码
+    "codeBeforHead":``,//其他代码,显示在</head>前
+    "codeBeforBody":``,//其他代码,显示在</body>前
+    "commentCode":``,//评论区代码
+    "widgetOther":``,//20201224新增参数,用于右侧 小部件扩展
     "widgetOther":`
     <div id="linkcat-0" class="widget widget_links">
         <h3 class="widget-title">
@@ -58,10 +62,6 @@ const OPT = {
             });
         </script>
     `,
-    "codeBeforHead":``,//其他代码,显示在</head>前
-    "codeBeforBody":``,//其他代码,显示在</body>前
-    "commentCode":``,//评论区代码
-    "widgetOther":``,//20201224新增参数,用于右侧 小部件扩展
     "otherCodeA":``,//其他参数A,可设置为 "阅读次数:"四个大字
     "otherCodeB":``,//其他参数A
     "otherCodeC":``,//其他参数A
