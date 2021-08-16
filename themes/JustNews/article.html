@@ -66,7 +66,16 @@
 			<div class="container wrap">
 
 
-				<div class="main">
+				<div class="logo">
+					{{ #OPT.logo }}
+					<a href="/" rel="home"><img src="{{ &OPT.logo }}" alt="{{ &OPT.siteName }}"></a>
+					{{ /OPT.logo }}
+						
+					{{ ^OPT.logo }}
+					<a href="/" rel="home"><img src="https://cdn.jsdelivr.net/gh/qyd8/img@main/logo.png" alt="请自定义OPT.logo"></a>
+					{{ /OPT.logo }}
+				</div>
+                                <div class="main">
 					<article id="post-{{ &articleSingle.id }}" class="post-{{ &articleSingle.id }} post type-post status-publish format-standard has-post-thumbnail hentry ">
 						<div class="entry">
 							<div class="entry-head">
